@@ -2,13 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var server = require('http').createServer(app);
-var io = require('socket.io')(server,{
-  cors: {
-    origin: "http://flotas.officialtaxitenerife.com",
-    methods: ["GET", "POST"],
-    credentials: true
-  }
-});
+var io = require('socket.io')(server);
 var port = process.env.PORT || 8000;
 
 var bodyParser = require('body-parser');
@@ -49,10 +43,17 @@ app.get('/', function(req, res){
   res.send('');
 });
 
-app.get('/recibir_llamada', function(req, res){
-  console.log("Recibiendo llamada");
+app.get('/play', function(req, res){
+  //console.log("Recibiendo llamada");
   //console.log(req.body.origin);
-  io.emit('llamadaRecibida', "mensaje aiuxiliar");
+  io.emit('llamadaRecibida', "play");
+  res.send('');
+});
+
+app.get('/stop', function(req, res){
+  //console.log("Recibiendo llamada");
+  //console.log(req.body.origin);
+  io.emit('llamadaRecibida', "stop");
   res.send('');
 });
 
