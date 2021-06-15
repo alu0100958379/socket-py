@@ -52,7 +52,7 @@ app.get('/', function(req, res){
 app.get('/recibir_llamada', function(req, res){
   console.log("Recibiendo llamada");
   //console.log(req.body.origin);
-  io.emit('llamadaRecibida', null);
+  io.emit('llamadaRecibida', "mensaje aiuxiliar");
   res.send('');
 });
 
