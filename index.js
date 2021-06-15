@@ -57,7 +57,6 @@ app.get('/recibir_llamada', function(req, res){
 });
 
 
-
 io.on('connection', (socket) => {
   console.log("Conexion");
   console.log(Object.keys(io.sockets.sockets));
