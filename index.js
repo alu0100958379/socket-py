@@ -9,7 +9,7 @@ var io = require('socket.io')(server,{
     credentials: true
   }
 });
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());       
