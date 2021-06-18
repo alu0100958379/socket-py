@@ -51,8 +51,8 @@ app.get('/play', function(req, res){
 });
 
 app.get('/stop', function(req, res){
-  //console.log("Recibiendo llamada");
-  //console.log(req.body.origin);
+  console.log("Recibiendo llamada");
+  console.log(req.body.origin);
   io.emit('llamadaRecibida', "stop");
   res.send('');
 });
